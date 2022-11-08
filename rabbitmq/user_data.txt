@@ -1,0 +1,9 @@
+#!/bin/sh
+
+HAPROXY_ENABLED=yes
+HAPROXY_COMBINED_PEM=s3://dwiest-backups/ec2/haproxy/combined.pem
+
+#SALT_MINION_ENABLED=
+#SALT_MINION_ID=
+
+if [ -e /home/ec2-user/runOnce.sh ]; then . /home/ec2-user/runOnce.sh; fi
