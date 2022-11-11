@@ -13,3 +13,7 @@ output ec2_launch_template_id {
 output ec2_security_group_id {
   value = module.ec2_service.ec2_security_group_id
 }
+
+output client_security_group_id {
+  value = aws_security_group.client.id
+}
