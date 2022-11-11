@@ -73,3 +73,27 @@ resource "aws_security_group_rule" "ingress_https_security_groups" {
   prefix_list_ids   = var.https_prefix_list_ids
   security_group_id = module.ec2_service.ec2_security_group_id
 }
+
+##
+##
+##
+
+resource "aws_security_group_rule" "egress_icmp" {
+  description      = "Allow ICMP out to clients"
+  type             = "egress"
+  from_port        = -1
+  to_port          = -1
+  protocol         = "icmp"
+  security_group_id = module.ec2_service.ec2_security_group_id
+  source_security_group_id = aws_security_group.client.id
+}
+
+resource "aws_security_group_rule" "ingress_icmp" {
+  description      = "Allow ICMP in from Nagios server"
+  type             = "ingress"
+  from_port        = -1
+  to_port          = -1
+  protocol         = "icmp"
+  security_group_id = aws_security_group.client.id
+  source_security_group_id = module.ec2_service.ec2_security_group_id
+}
