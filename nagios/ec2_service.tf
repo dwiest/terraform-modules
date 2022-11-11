@@ -14,6 +14,7 @@ module "ec2_service" {
   ec2_security_group_tags         = var.ec2_security_group_tags
   ec2_security_groups             = var.ec2_security_groups
   ec2_assign_public_ip            = var.ec2_assign_public_ip
+  ec2_ssh_key_name                = var.ec2_ssh_key_name
 
   vpc_id = var.vpc_id
 }
