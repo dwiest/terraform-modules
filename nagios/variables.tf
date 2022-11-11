@@ -163,3 +163,25 @@ variable https_prefix_list_ids {
   type        = list
   default     = []
 }
+
+variable client_security_group_name {
+  description = "The name of the Nagios client security group."
+  type        = string
+  default     = "NagiosMonitored"
+}
+
+variable client_security_group_description {
+  description = "The description of the Nagios client security group."
+  type        = string
+  default     = "NagiosMonitored"
+}
+
+variable client_security_group_tags {
+  description = "Tags to apply to the client security group."
+  type        = map
+
+  default = {
+    "Name"       : "NagiosMonitored"
+    "Managed-By" : "terraform"
+  }
+}
