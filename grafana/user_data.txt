@@ -1,0 +1,8 @@
+#!/bin/sh
+
+GRAFANA_ENABLED=yes
+
+#SALT_MINION_ENABLED=
+#SALT_MINION_ID=
+
+if [ -e /home/ec2-user/runOnce.sh ]; then . /home/ec2-user/runOnce.sh; fi
