@@ -117,7 +117,7 @@ variable ec2_assign_public_ip {
 }
 
 variable client_prefix_list_ids {
-  description = "A list of prefix list ids for HTTPS clients."
+  description = "A list of prefix list ids for MariaDB clients."
   type        = list
   default     = []
 }
@@ -130,6 +130,42 @@ variable client_cidr_blocks {
 
 variable client_security_groups {
   description = "Allows clients from these security groups."
+  type        = list
+  default     = []
+}
+
+variable http_prefix_list_ids {
+  description = "A list of prefix list ids for HTTP clients."
+  type        = list
+  default     = []
+}
+
+variable http_cidr_blocks {
+  description = "Allows HTTP clients from these CIDR blocks."
+  type        = list
+  default     = []
+}
+
+variable http_security_groups {
+  description = "Allows HTTP clients from these security groups."
+  type        = list
+  default     = []
+}
+
+variable https_prefix_list_ids {
+  description = "A list of prefix list ids for HTTP clients."
+  type        = list
+  default     = []
+}
+
+variable https_cidr_blocks {
+  description = "Allows HTTP clients from these CIDR blocks."
+  type        = list
+  default     = []
+}
+
+variable https_security_groups {
+  description = "Allows HTTP clients from these security groups."
   type        = list
   default     = []
 }
