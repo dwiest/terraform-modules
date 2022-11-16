@@ -116,80 +116,32 @@ variable ec2_assign_public_ip {
   default     = false
 }
 
-variable amqp_cidr_blocks {
-  description = "A list of CIDR blocks for AMQP clients."
+variable http_prefix_list_ids {
+  description = "A list of prefix list ids for HTTP clients."
   type        = list
   default     = []
 }
 
-variable amqp_ipv6_cidr_blocks {
-  description = "A list of IPv6 CIDR blocks for AMQP clients."
-  type        = list
-  default     = []
-}
-
-variable amqp_security_groups {
-  description = "A list of security group ids for AMQP clients."
-  type        = list
-  default     = []
-}
-
-variable amqp_prefix_list_ids {
-  description = "A list of prefix list ids for AMQP clients."
-  type        = list
-  default     = []
-}
-
-variable amqps_cidr_blocks {
-  description = "A list of CIDR blocks for AMQPS clients."
-  type        = list
-  default     = []
-}
-
-variable amqps_ipv6_cidr_blocks {
-  description = "A list of IPv6 CIDR blocks for AMQPS clients."
-  type        = list
-  default     = []
-}
-
-variable amqps_security_groups {
-  description = "A list of security group ids for AMQPS clients."
-  type        = list
-  default     = []
-}
-
-variable amqps_prefix_list_ids {
-  description = "A list of prefix list ids for AMQPS clients."
-  type        = list
-  default     = []
-}
-
-variable mgmt_cidr_blocks {
-  description = "A list of CIDR blocks for Mochiweb clients."
-  type        = list
-  default     = []
-}
-
-variable mgmt_ipv6_cidr_blocks {
-  description = "A list of IPv6 CIDR blocks for Mochiweb clients."
-  type        = list
-  default     = []
-}
-
-variable mgmt_security_groups {
-  description = "A list of security group ids for Mochiweb clients."
-  type        = list
-  default     = []
-}
-
-variable mgmt_prefix_list_ids {
-  description = "A list of prefix list ids for Mochiweb clients."
+variable https_prefix_list_ids {
+  description = "A list of prefix list ids for HTTPS clients."
   type        = list
   default     = []
 }
 
 variable client_cidr_blocks {
   description = "Allows clients from these CIDR blocks."
+  type        = list
+  default     = []
+}
+
+variable http_security_groups {
+  description = "Allows HTTP access from these security groups."
+  type        = list
+  default     = []
+}
+
+variable https_security_groups {
+  description = "Allows HTTPS access from these security groups."
   type        = list
   default     = []
 }
