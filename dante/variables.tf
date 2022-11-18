@@ -113,7 +113,7 @@ variable ec2_subnet {
 variable ec2_assign_public_ip {
   description = "Auto-assign a public IP address to the EC2 instances?"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable client_prefix_list_ids {
